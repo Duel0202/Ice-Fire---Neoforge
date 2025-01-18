@@ -1,7 +1,16 @@
+// Add this block to ensure Gradle can find the Forge plugin
+pluginManagement {
+    repositories {
+        gradlePluginPortal() // Default plugin portal
+        maven {
+            url = 'https://maven.minecraftforge.net/releases' // Forge plugin repository
+        }
+    }
+}
 
 plugins {
     id 'java'
-    id 'net.minecraftforge.gradle' version '6.0.+'
+    id 'net.minecraftforge.gradle' version '6.0.+' // Use the Forge plugin
 }
 
 group = 'com.github.alexthe666'
@@ -10,26 +19,26 @@ archivesBaseName = 'iceandfire'
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion = JavaLanguageVersion.of(17) // Set Java version to 17
     }
 }
 
 minecraft {
-    mappings channel: 'official', version: '1.20.1'
+    mappings channel: 'official', version: '1.20.1' // Set Minecraft mappings
     accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 }
 
 repositories {
-    maven { url 'https://maven.neoforge.net/releases' }
+    maven { url 'https://maven.neoforge.net/releases' } // Repository for NeoForge
 }
 
 dependencies {
-    implementation fg.deobf("net.neoforge:neoforge:1.20.1-45.0.0")
+    implementation fg.deobf("net.neoforge:neoforge:1.20.1-45.0.0") // NeoForge dependency
 }
 
 tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-    options.release = 17
+    options.encoding = 'UTF-8' // Set encoding
+    options.release = 17 // Use Java 17
 }
 
 jar {
