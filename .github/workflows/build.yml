@@ -17,6 +17,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '17'
+        distribution: 'temurin' # You can also use 'zulu' or 'adopt'
 
     - name: Cache Gradle packages
       uses: actions/cache@v3
@@ -34,3 +35,4 @@ jobs:
       with:
         name: mod-jar
         path: build/libs/*.jar
+
