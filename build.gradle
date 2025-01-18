@@ -1,6 +1,15 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        maven {
+            url = "https://maven.minecraftforge.net/releases"
+        }
+    }
+}
+
 plugins {
     id 'java'
-    id 'net.minecraftforge.gradle' version '6.0.20'
+    id 'net.minecraftforge.gradle' version '6.0.20' // Specify exact version
 }
 
 group = 'com.github.alexthe666'
