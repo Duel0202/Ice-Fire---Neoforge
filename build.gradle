@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'net.minecraftforge.gradle' version '6.0.14' // Or try '6.0.12'
+    id 'net.minecraftforge.gradle' version '5.1.52'
 }
 
 group = 'com.github.alexthe666'
