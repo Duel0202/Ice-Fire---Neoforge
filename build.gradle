@@ -19,12 +19,13 @@ minecraft {
 }
 
 repositories {
-    maven { url 'https://maven.neoforge.net/releases' }
-    mavenCentral() // Add Maven Central as a backup
+    maven { url 'https://maven.minecraftforge.net/releases' } // Forge repository
+    maven { url 'https://maven.neoforge.net/releases' } // NeoForge repository
+    mavenCentral() // General Maven Central
 }
 
 dependencies {
-    implementation fg.deobf("net.neoforge:neoforge:1.20.1-45.0.0")
+    implementation fg.deobf("net.neoforge:neoforge:1.20.1-45.0.0") // Adjust version if needed
 }
 
 tasks.withType(JavaCompile) {
