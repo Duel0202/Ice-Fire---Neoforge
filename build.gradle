@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'net.minecraftforge.gradle' version '5.1.52'
+    id 'net.minecraftforge.gradle' version '6.0.14' // Use a stable version
 }
 
 group = 'com.github.alexthe666'
@@ -9,23 +9,23 @@ archivesBaseName = 'iceandfire'
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion = JavaLanguageVersion.of(17) // Java 17
     }
 }
 
 minecraft {
-    mappings channel: 'official', version: '1.20.1'
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+    mappings channel: 'official', version: '1.20.1' // Specify mappings for Minecraft
 }
 
 repositories {
     maven { url 'https://maven.minecraftforge.net/releases' } // Forge repository
     maven { url 'https://maven.neoforge.net/releases' } // NeoForge repository
-    mavenCentral() // General Maven Central
+    mavenCentral() // Add Maven Central
 }
 
 dependencies {
-    implementation fg.deobf("net.neoforge:neoforge:1.20.1-45.0.0") // Adjust version if needed
+    minecraft 'net.minecraft:minecraft:1.20.1' // Minecraft dependency
+    implementation fg.deobf("net.neoforge:neoforge:1.20.1-45.0.0") // NeoForge dependency
 }
 
 tasks.withType(JavaCompile) {
