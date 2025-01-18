@@ -1,0 +1,22 @@
+{
+  "mappings": {
+    "com/github/alexthe666/iceandfire/mixin/gen/NoLakesInStructuresMixin": {
+      "place(Lnet/minecraft/world/level/levelgen/feature/FeaturePlaceContext;)Z": "Lnet/minecraft/world/level/levelgen/feature/LakeFeature;m_142674_(Lnet/minecraft/world/level/levelgen/feature/FeaturePlaceContext;)Z"
+    },
+    "com/github/alexthe666/iceandfire/mixin/gen/WorldGenRegionMixin": {
+      "ensureCanWrite": "Lnet/minecraft/server/level/WorldGenRegion;m_180807_(Lnet/minecraft/core/BlockPos;)Z",
+      "Lnet/minecraft/Util;logAndPauseIfInIde(Ljava/lang/String;)V": "Lnet/minecraft/Util;m_143785_(Ljava/lang/String;)V"
+    }
+  },
+  "data": {
+    "searge": {
+      "com/github/alexthe666/iceandfire/mixin/gen/NoLakesInStructuresMixin": {
+        "place(Lnet/minecraft/world/level/levelgen/feature/FeaturePlaceContext;)Z": "Lnet/minecraft/world/level/levelgen/feature/LakeFeature;m_142674_(Lnet/minecraft/world/level/levelgen/feature/FeaturePlaceContext;)Z"
+      },
+      "com/github/alexthe666/iceandfire/mixin/gen/WorldGenRegionMixin": {
+        "ensureCanWrite": "Lnet/minecraft/server/level/WorldGenRegion;m_180807_(Lnet/minecraft/core/BlockPos;)Z",
+        "Lnet/minecraft/Util;logAndPauseIfInIde(Ljava/lang/String;)V": "Lnet/minecraft/Util;m_143785_(Ljava/lang/String;)V"
+      }
+    }
+  }
+}

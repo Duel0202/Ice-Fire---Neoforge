@@ -1,0 +1,41 @@
+package com.github.alexthe666.iceandfire.entity.ai;
+
+import com.github.alexthe666.iceandfire.entity.EntityMyrmexSwarmer;
+import java.util.EnumSet;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.goal.Goal.Flag;
+import net.minecraft.world.entity.ai.goal.target.TargetGoal;
+import net.minecraft.world.entity.ai.targeting.TargetingConditions;
+
+public class MyrmexAISummonerHurtByTarget extends TargetGoal {
+   EntityMyrmexSwarmer tameable;
+   LivingEntity attacker;
+   private int timestamp;
+
+   public MyrmexAISummonerHurtByTarget(EntityMyrmexSwarmer theDefendingTameableIn) {
+      super(theDefendingTameableIn, false);
+      this.tameable = theDefendingTameableIn;
+      this.m_7021_(EnumSet.of(Flag.MOVE));
+   }
+
+   public boolean m_8036_() {
+      LivingEntity living = this.tameable.getSummoner();
+      if (living == null) {
+         return false;
+      } else {
+         this.attacker = living.m_21188_();
+         int i = living.m_21213_();
+         return i != this.timestamp && this.m_26150_(this.attacker, TargetingConditions.f_26872_) && this.tameable.shouldAttackEntity(this.attacker, living);
+      }
+   }
+
+   public void m_8056_() {
+      this.f_26135_.m_6710_(this.attacker);
+      LivingEntity LivingEntity = this.tameable.getSummoner();
+      if (LivingEntity != null) {
+         this.timestamp = LivingEntity.m_21213_();
+      }
+
+      super.m_8056_();
+   }
+}
